@@ -225,6 +225,10 @@ def synthetic_datasets(betas, alphas, X, sigma):
 
 
 def plot_mse():
+    """
+    Plots the MSE
+    :return: nothing
+    """
     from sys import argv
     if len(argv) == 2 and argv[1] == 'csl':
         import matplotlib
@@ -258,6 +262,7 @@ def plot_mse():
     cyan_points, = ax.plot(sigmas, y_quadratic, '-o', label="Quadratic Dataset", color='tab:cyan')
 
     plt.legend([red_points, cyan_points], ['Linear', 'Quadratic'])
+    plt.savefig('mse.pdf')
 
 
 if __name__ == '__main__':
